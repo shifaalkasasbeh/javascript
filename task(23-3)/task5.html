@@ -9,14 +9,29 @@
 <body>
     <form class="pure-form">
         <fieldset>
-         <div>  <h5>password (min 6characters)</h5>
-            <input type="password" placeholder="Password" id="password" required>
-            <br></div> 
-            <div></div>    <h5>repeat password </h5>
-            <input type="password" placeholder="Confirm Password" id="confirm_password" required>
-    <br></div> 
+         <lable>password (min 6characters)</lable>
+            <input type="password" placeholder="Password" class="password" required  onchange=" passwordch()"><span class="err"></span> <br>
+            <br>
+            <lable>password (min 6characters)</lable>
+            <lable>repeat password </lable>
+            <input type="password" placeholder="Confirm Password"  class="password" >
+   
      <button type="submit" class="button ">submit</button>
         </fieldset>
-    </form>   
+    </form>
+    
+    <script>
+        let pass=document.getElementsByClassName('password');
+  
+        function passwordch()
+        {      let pass1=pass[0]
+            if (pass.length<6){
+window.alert('ss')
+
+            }
+
+        }
+
+    </script>
 </body>
 </html>
