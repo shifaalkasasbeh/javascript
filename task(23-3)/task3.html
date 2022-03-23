@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p ><img src="../task(23-3)/img/Untitled.png" id="show"></p>
+    <select id="select" onchange="select()" ; style="width:150px; height:100px">
+        <option value="select">select</option>
+<option value="france">france</option>
+<option value="egipt">egipt</option>
+<option value="palastin">palastin</option>
+<option value="germany">germany</option>
+    </select>
+    <script>
+
+    
+        function select(){
+            let s=document.getElementById('select').value;
+            if(s=='select'){
+                document.getElementById('show').setAttribute('src','../task(23-3)/img/Untitled.png')
+                document.getElementById('show').setAttribute('alt','select')
+            }
+           else if(s=='france'){
+                document.getElementById('show').setAttribute('src','../task(23-3)/img/frenchflagframed.png')
+                document.getElementById('show').setAttribute('alt','france')
+            }
+            else if(s=='egipt'){
+                document.getElementById('show').setAttribute('src','../task(23-3)/img/download (1).png')
+                document.getElementById('show').setAttribute('alt','egipt')
+            }
+            else if(s=='germany'){
+                document.getElementById('show').setAttribute('src','../task(23-3)/img/download (2).png')
+                document.getElementById('show').setAttribute('alt','germany')
+            }
+            else if(s=='palastin'){
+                document.getElementById('show').setAttribute('src','../task(23-3)/img/images.png')
+                document.getElementById('show').setAttribute('alt','palastin')
+          
+        }
+    }
+    
+    </script>
+</body>
+</html>
