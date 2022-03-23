@@ -9,7 +9,7 @@
         span{
             color:red;
         }
-        .butn{
+        #butn{
 display: none;
 
         }
@@ -32,17 +32,20 @@ display: none;
     <script>
         let pass=document.getElementsByClassName('password');
   let err=document.getElementsByClassName('err');
-  let butn=document.getElementsByClassName('butn')
+  let butn=document.getElementById('butn')
+
         function passwordch()
-        {      let pass1=pass[0]
-            let pass2=pass[0]
-            if (pass.length<6){
+        {      let pass1=pass[0].value
+
+            let pass2=pass[1].value
+            
+            if (pass1.length<6){
 err[0].innerHTML="too short";}
 else{
     err[0].innerHTML="";
 }
-if (pass.length<6){
-err[1].innerHTML="too short";}
+if (pass1.length<6){
+err[1].innerHTML=" ";}
 else{
     err[1].innerHTML="";
 }
@@ -50,8 +53,8 @@ else{
 
 if(pass1 == pass2)
 {
-
-   
+    butn.style.display="block";
+    err[1].innerHTML=" ";
 }
 else{
     err[1].innerHTML="password do not match";
