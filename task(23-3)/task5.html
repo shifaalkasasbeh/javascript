@@ -5,32 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        span{
+            color:red;
+        }
+        .butn{
+display: none;
+
+        }
+    </style>
 </head>
 <body>
-    <form class="pure-form">
+    
         <fieldset>
          <lable>password (min 6characters)</lable>
             <input type="password" placeholder="Password" class="password" required  onchange=" passwordch()"><span class="err"></span> <br>
             <br>
             <lable>password (min 6characters)</lable>
             <lable>repeat password </lable>
-            <input type="password" placeholder="Confirm Password"  class="password" >
-   
-     <button type="submit" class="button ">submit</button>
+            <input type="password" placeholder="Confirm Password"  class="password" onchange=" passwordch()">
+            <span class="err"></span> <br>
+     <button type="submit" id="butn" >submit</button>
         </fieldset>
-    </form>
+  
     
     <script>
         let pass=document.getElementsByClassName('password');
-  
+  let err=document.getElementsByClassName('err');
+  let butn=document.getElementsByClassName('butn')
         function passwordch()
         {      let pass1=pass[0]
+            let pass2=pass[0]
             if (pass.length<6){
-window.alert('ss')
+err[0].innerHTML="too short";}
+else{
+    err[0].innerHTML="";
+}
+if (pass.length<6){
+err[1].innerHTML="too short";}
+else{
+    err[1].innerHTML="";
+}
 
-            }
 
-        }
+if(pass1 == pass2)
+{
+
+   
+}
+else{
+    err[1].innerHTML="password do not match";
+    
+      }
+
+    }
 
     </script>
 </body>
