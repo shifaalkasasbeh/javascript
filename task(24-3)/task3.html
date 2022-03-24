@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   var persons = [
+          { name: { first: 'John', last: 'Hob' }, age: 35 },
+          { name: { first: 'Alex', last: 'Mercer' }, age: 25 },
+          { name: { first: 'Alice', last: 'Zaheer' }, age: 24 },
+          { name: { first: 'Zues', last: 'Odin' }, age: 55 },
+          { name: { first: 'Soso', last: 'Al-Amora' }, age: 67 }
+        ];
+
+console.log(olderPerson(persons))
+function olderPerson(older){
+  let a=older[0].age
+  let index=0
+  let str=''
+  for(let i=0; i<older.length; i++){
+    if(older[i].age>a){
+      a=older[i].age
+      index =i 
+    }
+  }
+  str='The older ' + older[index].name.first + ' ' + older[index].name.last
+  return (str)
+}  
+  </script>
+</body>
+</html>

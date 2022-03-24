@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+
+var people = [
+          { name: { first: 'John', last: 'Hob' }, age: 35 },
+          { name: { first: 'Alex', last: 'Mercer' }, age: 25 },
+          { name: { first: 'Alice', last: 'Zaheer' }, age: 24 },
+          { name: { first: 'Zues', last: 'Odin' }, age: 55 },
+          { name: { first: 'Soso', last: 'Al-Amora' }, age: 67 },
+        ];
+        
+
+
+function longtName() {
+        let s= long[0].name.first + long[0].name.last;
+        let a = people.length;
+        for (i = 1; i < a; i++) {
+            if (s.length <long[i].name.first.length + long[i].name.last.length) {
+                s = long[i].name.first + long[i].name.last;  }
+        }
+
+        return s;
+    }
+
+    const long = Object.create(people)
+    console.log(longtName());
+    
+
+
+   </script> 
+</body>
+</html>
