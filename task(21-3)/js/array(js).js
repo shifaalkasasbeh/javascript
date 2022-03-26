@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script >
+
  /*Q-1*/
 /*
 Correct the syntax error
@@ -348,10 +339,211 @@ Ex: minInArray(nums,8) => [1,2,3,9]
 
 
 
+/*
+16
+Create a function called oddArray
+that accept an array
+and return an array have only the odd elemnts
+var nums= [1,2,3,8,9]
+Ex: oddArray(nums) => [1,3,9]
+** solve it one time using for loop and another using while loop
+**try more cases by your self
+*//*
+function oddArray(array){
+	var oddArr=[];
 
-        </script>  
-</body>
-</html>
+	var count=0;		
+		while (count<array.length)
+		{
+			if(array[count]%2!==0)
+			{oddArr.push(array[count]);}
+		count++;
+		}
 
+	return oddArr;
+
+}
+
+var nums= [1,2,3,8,9,6,2,8,4,3,6,4,5,6,8,9];
+oddArray(nums);
+console.log(nums)
+*/
+
+/*
+17
+Create a function called aveArray
+that accept an array
+and return the average of the numbers inside this array
+var nums= [1,2,3,8,9]
+Ex: aveArray(nums) => 4.6
+var nums2= [1,2,3,8,9,77]
+Ex: aveArray(nums) => 16.6
+** solve it one time using for loop and another using while loop
+**try more cases by your self
+*/
+/*
+function aveArray(array) {
+
+	var sum=0;
+	var len=array.length;
+
+	counter=0;
+	while(counter<len)
+    {
+		sum+=array[counter];
+		counter++;
+    }
+	return sum/len;
+}
+var nums=[1,2,3,8,9,77];
+aveArray(nums);
+
+*/
+
+
+/*
+18
+Create a function called shorterInArray
+that accept an array of strings
+and return the shortest string inside this array (first)
+var strings= ["alex","mercer","madrasa","rashed2","emad","hala"]
+Ex: shorterInArray(strings) => "alex"
+** solve it one time using for loop and another using while loop
+**try more cases by your self
+*//*
+function shorterInArray(strArray){
+	var len=strArray.length;
+	var min=strArray[0].length;
+
+
+		var counter=0;	
+		while (counter<len)
+		{
+			if (strArray[counter].length<=min ) {
+				min=strArray[counter];
+			}
+			counter++;
+		}
+	
+	return min;
+}
+
+var strings= ["alex","mercer","madrasa","rashed2","emad","hala"];
+shorterInArray(strings);
+
+*/
+
+
+
+
+/*
+19
+Create a function called repeatChar
+that accept a string and char
+and return the times that this char repeat inside this string
+var string= "alex mercer madrasa rashed2 emad hala"
+Ex: repeatChar(string,"a") => 6
+Ex: repeatChar(string,"z") => 0
+** solve it one time using for loop and another using while loop
+**try more cases by your self
+*//*
+function repeatChar(str,char){
+var sum=0;
+
+
+		var counter=0;		//method 2
+		while (counter<str.length)
+		{
+			if (str.charAt(counter)==char ) {
+				sum++;
+			}
+			counter++;
+		}
+	return sum;
+}
+var string= "alex mercer madrasa rashed2 emad hala";
+repeatChar(string,"a");
+*/
+
+
+/*
+20
+Create a function called evenIndexOddLength
+that accept an array of strings
+and return a new array that have the string with odd length in even index
+var strings= ["alex","mercer","madrasa","rashed2","emad","hala"]
+Ex: evenIndexOddLength(strings) => ["madrasa"]
+** solve it one time using for loop and another using while loop
+**try more cases by your self
+*//*
+function evenIndexOddLength(strArray){
+	var len=strArray.length;
+	var str="";
+
+	var count=0;
+	while(count<len){
+		if (strArray[count].length%2!=0) {
+			str=strArray[count];
+		}
+		count+=2;
+	}
+	
+	return str;
+
+}
+var strings= ["alex","mercer","madrasa","rashed2","emad","hala"];
+evenIndexOddLength(strings);
+
+*/
+
+/*
+21
+Create a function called powerElementIndex
+that accept an array of number
+and return a new array that have the elemnt power by the index of it self
+var nums= [44, 5, 4, 3, 2, 10]
+Ex: powerElementIndex(nums) => [0, 5, 16, 27, 16, 100000]
+** solve it one time using for loop and another using while loop
+**try more cases by your self
+*//*
+function powerElementIndex(array){
+	var arr=[];
+	for(var i=0;i<array.length;i++){
+		arr.push(array[i]**i);
+
+	}
+	return arr;
+}
+var nums= [44, 5, 4, 3, 2, 10];
+powerElementIndex(nums);
+
+*/
+/*
+22
+Create a function called evenNumberEvenIndex
+that accept an array of nums
+and return a new array that have the even number in even index
+var nums= [5,2,2,1,8,66,55,77,34,9,55,1]
+Ex: evenNumberEvenIndex(nums) => [2,8,34]
+** solve it one time using for loop and another using while loop
+**try more cases by your self
+*//*
+function evenNumberEvenIndex(array) {
+	var evenArr=[];
+
+	var count=0;	
+		while (count<array.length)
+		{
+			if(array[count]%2==0)
+			{evenArr.push(array[count]);}
+		count+=2;
+		}
+
+	return evenArr;
+}
+var nums= [5,2,2,1,8,66,55,77,34,9,55,1];
+evenNumberEvenIndex(nums);
+
+*/
 
 

@@ -8,14 +8,12 @@
 </head>
 <body>
     <script>
-const arr = ['a', 'cat', 'cat', 'cat'];
-
-const count = {};
-
-arr.forEach(element => {
-  count[element] = (count[element] || 0) + 1;
-});
-console.log(count);
+var object = {a: 1, cat: 3}
+var array = ['a', 'cat', 'd']
+function selectFromObject(object,array){
+   console.log("{"+ array[0]+ ":"+object.a+","+`${array[1]}:${object.cat}}`)
+}
+selectFromObject(object,array)
     </script>
 </body>
 </html>
