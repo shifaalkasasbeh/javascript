@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <form>
+    <div class="container" style="margin: 10px;">
+            <div id="main" class="form-group">
+                <div>
+                        <label><b>Name :</b></label> <br>
+                        <input type="text" id="inp1"> <br>
+                        <label><b>Age :</b></label><br>
+                        <input type="number" id="inp2"><br>
+                        <label><b>Gender :</b></label><br>
+                        <input type="text" id="inp3"> <br>
+                        <label><b>Birth Date :</b></label><br>
+                        <input type="date" id="inp4"><br>
+                        <label><b>Your Image :</b></label><br>
+                        <input type="file" id="img">
+                </div>
+                <div>
+                        <label><b>Description :</b></label> <br>
+                        <input type="text" id="inp5"> <br>
+                        <label><b>major & university :</b></label><br>
+                        <input type="text" id="inp6"><br>
+                        <label><b>Programming Language :</b></label><br>
+                        <input type="checkbox" id="html"> HTML
+                        <input type="checkbox" id="css"> CSS
+                        <input type="checkbox" id="js"> JS
+
+                </div>
+                <div>
+                <div>
+                        <label><b>siblings number :</b></label> <br>
+                        <input type="number" id="inp8"> <br>
+                        <label><b>description of siblings :</b></label><br>
+                        <input type="text" id="inp9"><br>
+                </div>
+            <input type="submit" style="margin-top: 10px;" id="submit" onclick="sub()">
+            </div>
+    </div>
+</form>
+<div style="display: grid; grid-template-columns: repeat(3,1fr); grid-gap: 20px 20px;  " >
+<div id="first" style="border: 2px brown solid; padding: 10px;">
+<h6 id="s1"></h6>
+<h6 id="s2"></h6>
+<h6 id="s3"></h6>
+<h6 id="s4"></h6>
+<img src="" id="im2">
+</div>
+<div id="second" style="border: 2px brown solid; padding: 10px;">
+<h6 id="s5"></h6>
+<h6 id="s6"></h6>
+<ul>
+        <li id="l1"></li>
+        <li id="l2"></li>
+        <li id="l3"></li>
+</ul>
+</div>
+<div id="third" style="border: 2px brown solid; padding: 10px;">
+<h6 id="s8"></h6>
+<h6 id="s9"></h6>
+</div>
+</div>
+<script>
+function sub(){
+    var name =document.getElementById('inp1');
+    localStorage.setItem('Name',name.value);
+    var age =document.getElementById('inp2');
+    localStorage.setItem('Age',age.value);
+    var gender =document.getElementById('inp3');
+    localStorage.setItem('Gender',gender.value);
+    var bdate =document.getElementById('inp4');
+    localStorage.setItem('Birth Date',bdate.value);
+
+    //image ^_^ ........
+    var im = document.getElementById('img');
+    localStorage.setItem('My Image',im.value)
+
+    var desme =document.getElementById('inp5');
+    localStorage.setItem('Description',desme.value);
+    var uni =document.getElementById('inp6');
+    localStorage.setItem('major & university',uni.value);
+    
+    //lan-prog  ........
+    var h = document.getElementById('html');
+    localStorage.setItem('HTML',h.value)
+    var c = document.getElementById('css');
+    localStorage.setItem('CSS',c.value)
+    var j = document.getElementById('js');
+    localStorage.setItem('JAVASCRIPT',j.value)
+
+
+    var sibNum =document.getElementById('inp8');
+    localStorage.setItem('siblings number',sibNum.value);
+
+    var dessib =document.getElementById('inp9');
+    localStorage.setItem('description of siblings',dessib.value);
+}
+
+document.getElementById('s1').innerHTML="My name is "+localStorage.getItem('Name');
+document.getElementById('s2').innerHTML=localStorage.getItem('Age') + " year's old";
+document.getElementById('s3').innerHTML=localStorage.getItem('Gender');
+document.getElementById('s4').innerHTML=localStorage.getItem('Birth Date');
+document.getElementById('im2').innerHTML=localStorage.getItem('My Image') ;       
+document.getElementById('s5').innerHTML=localStorage.getItem('Description');
+document.getElementById('s6').innerHTML=localStorage.getItem('major & university');
+document.getElementById('l1').innerHTML=localStorage.getItem('HTML') +" HTML";
+document.getElementById('l2').innerHTML=localStorage.getItem('CSS') + " CSS"
+document.getElementById('l3').innerHTML=localStorage.getItem('JAVASCRIPT') +" JAVASCRIPT"
+document.getElementById('s8').innerHTML=localStorage.getItem('siblings number') +" Sister"
+document.getElementById('s9').innerHTML=localStorage.getItem('description of siblings')
+
+</script>
+</body>
+</html>
