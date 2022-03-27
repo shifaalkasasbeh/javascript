@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <form>
+        <div class="container" style="margin: 10px;">
+            <div id="main" class="form-group">
+
+        <h1>Master Piece</h1>
+
+        <label>Subject :</label><br>
+        <input type="text" id="subject"><br>
+
+        <label>Description :</label><br>
+        <textarea id="description" name="" id="" cols="30" ></textarea><br>
+
+        <label>User Types :</label><br>
+        <input type="text" id="usertype"><br>
+
+        <label>Technology used :</label><br>
+        <input type="text" id="tech"><br>
+
+        <input type="submit" onclick="showCard()" style="margin-top: 10px;">
+            
+        </div> 
+            </div>
+    </form>
+    <div id="card" style="display: none; border: 1px solid;">
+            
+        <h3 id="cardname"></h3>
+
+       
+        <div id="cardselfDescription"></div>
+        
+        <div id="cardtech"></div>
+        
+        <div id="cardusertype"></div>
+
+    </div>
+
+    <script >let subject = document.getElementById("subject")
+        let tech = document.getElementById("tech")
+        let user = document.getElementById("usertype")
+        let des = document.getElementById("description")
+        
+        function showCard(){
+            sessionStorage.setItem("subject",`${subject.value}`)
+            sessionStorage.setItem("tech",`${tech.value}`)
+            sessionStorage.setItem("user",`${user.value}`)
+            sessionStorage.setItem("des",`${des.value}`)
+        
+            sessionStorage.setItem("display" , "block")
+        }
+        
+        
+        document.getElementById("cardname").innerHTML=sessionStorage.getItem("subject")
+        document.getElementById("cardselfDescription").innerHTML=sessionStorage.getItem("des")
+        document.getElementById('cardtech').innerHTML=sessionStorage.getItem("tech")
+        document.getElementById("cardusertype").innerHTML=sessionStorage.getItem("user")
+        document.getElementById("card").style.display=sessionStorage.getItem("display")</script>
+</body>
+</html>
