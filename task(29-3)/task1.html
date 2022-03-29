@@ -11,12 +11,13 @@
   </head>
   <body>
       <div class="container"> 
-<select id="char" class="form-control"> 
+<select id="character" class="form-control"> 
 
     <option>please select</option>
         </select>
+        <div id="content"></div>
       </div>
-      <div id="content"></div>
+  
       <script>
 
    async function loadData() {
@@ -26,12 +27,18 @@ const data = await response.json();
 for (let index=0; index < data.length ;index++ )
 {
 
-document.getElementById ('char').innerHTML += "<option>"+ data[index].name +"</option>"; 
+document.getElementById ('character').innerHTML += "<option>"+ data[index].name +"</option>"; 
 
+      }   }
 
+      document.getElementById("character").onchange=function(){
+for(let i=0;i<data.length;i++)
+if(data[i].name === document.getElementById("character").value){
+
+  document.getElementById("content").innerHTML = data[i].nickname;
 }
-   }
-   loadData();
+
+      }
 
       </script>
 
