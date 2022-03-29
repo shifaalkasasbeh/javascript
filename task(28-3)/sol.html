@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <button class="btn btn-danger" id="btn">Load Data</button>
+        <table class="table table-striped" id="tab">
+            <tr> <th>Name</th> <th>gridfirst</th> <th>gridsc</th> <th>gridth</th> </tr>
+        
+        </table>
+
+    </div>
+    
+
+    <script>
+
+        document.getElementById('btn').addEventListener('click',function(){
+            let x= new XMLHttpRequest();
+            x.open('GET','task.json');
+
+            x.onload=function(){
+            let data = JSON.parse(x.responseText);
+            n(data);
+           // document.write(data[0].Name);
+        }
+        x.send();
+
+        });
+        function n(data){
+            var info =document.getElementById('tab');
+            var dd='';
+            for(i=0; i<data.length ;i++){
+               dd+='<tr><td>'+ data[i].Name +'</td><td>'+data[i].gridfirst +'</td> <td>' +data[i].  gridsc +'</td> <td>'+ data[i].gridth +'</td>';
+            }
+            info.insertAdjacentHTML('beforeend',dd);
+        }
+    
+    
+       
+      </script>
+</body>
+</html
