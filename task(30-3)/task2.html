@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="d">
+        <fieldset>
+            <legend><h1>Registration</h1></legend>
+        <form class="form-group">
+            <lable for="text" > First Name :</lable>
+            <input type="text" id="fname"><br>
+            <lable for="text" >  Last Name :</lable>
+            <input type="text" id="lname"><br>
+
+            <lable for="number" >  Birth Date : </lable>
+           <input type="text" id="BD" ><br>
+           
+           
+           <lable for="text" >   Email: </lable>
+            <input type='email' id='email'><br>
+
+            <lable for="text" >    Confirm Email: </lable>
+            <input type='email' id='confemail'><br>
+
+
+            <lable for="text" >   Password : </lable>
+            <input type='password' id='pass' /><br>
+
+            <lable for="text" >  Confirm Password :</lable>
+             <input type='password' id='confpass' /><br>
+
+            <input type="button"  value="Submit" onclick="Valdate()"><br>
+            <span id="massage"></span>
+        </form>
+        </fieldset>
+    </div>
+    </div>
+
+<script>
+    function Valdate() {
+        var aler= '';
+        var fNameFormat =/^[a-zA-Z]+$/g;
+        var lNameFormat =/^[a-zA-Z]+$/g;
+        if (document.getElementById('fname').value.match(fNameFormat)&&document.getElementById('lname').value.match(lNameFormat)) {
+            aler += '';
+        }
+        else {
+            aler += 'Wrong Name <br>';
+        }
+        var dateFormat=/^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/;
+        if (document.getElementById('BD').value.match(dateFormat)) {
+            aler += '';
+        }
+        else {
+            aler += 'Wrong Date <br>';
+        }
+        var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z])/;
+        if (document.getElementById('email').value.match(mailformat)) {
+            aler += '';
+        }
+        else {
+            aler += 'Wrong Email <br>';
+        }
+        if (document.getElementById('email').value == document.getElementById('confemail').value) {
+            aler += '';
+        }
+        else {
+            aler += ' not match <br>';
+        }
+        var passRegEx = /^(?=.*[A-Z])(?=.*[a-z])(?=(?:\D*\d){2})(?=.*[@#$%^&-+=()]).{8,9}$/;
+        if (document.getElementById('pass').value.match(passRegEx)) {
+            aler += '';
+        }
+        else {
+            aler += 'Wrong Password <br>';
+        }
+        if (document.getElementById('pass').value == document.getElementById('confpass').value) {
+            aler += '';
+        }
+        else {
+            aler += 'The two Password not match <br>';
+        }
+
+document.getElementById('massage').innerHTML=msg;
+    }
+    </script>
+</body>
+</html>
