@@ -44,9 +44,9 @@
 <script>
     function Valdate() {
         var aler= '';
-        var fNameFormat =/^[a-zA-Z]+$/g;
-        var lNameFormat =/^[a-zA-Z]+$/g;
-        if (document.getElementById('fname').value.match(fNameFormat)&&document.getElementById('lname').value.match(lNameFormat)) {
+        var firName =/^[a-zA-Z]+$/g;
+        var lastName=/^[a-zA-Z]+$/g;
+        if (document.getElementById('firName').value.match(firName)&&document.getElementById('lastName').value.match(lastName)) {
             aler += '';
         }
         else {
@@ -59,8 +59,8 @@
         else {
             aler += 'Wrong Date <br>';
         }
-        var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z])/;
-        if (document.getElementById('email').value.match(mailformat)) {
+        var emailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z])/;
+        if (document.getElementById('email').value.match(emailformat)) {
             aler += '';
         }
         else {
@@ -86,7 +86,7 @@
             aler += 'The two Password not match <br>';
         }
 
-document.getElementById('massage').innerHTML=aler;
+document.getElementById('alert').innerHTML=aler;
     }
     </script>
 </body>
